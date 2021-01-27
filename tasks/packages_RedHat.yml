@@ -1,0 +1,32 @@
+---
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+- name: Include Redhat variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Install prereq packages
+  package:
+    name: "{{ __redhat_prereqs }}"
+    state: present
+  when: __redhat_prereqs is defined
+
+- name: Install docker repo
+  yum_repository:
+    name: DockerCe
+    description: Docker Repository
+    baseurl: "{{ docker_download_root }}/{{ ansible_distribution | lower }}/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/{{ docker_channel }}/"
+    gpgcheck: yes
+    gpgkey: "{{ docker_download_root }}/{{ ansible_distribution | lower }}/gpg"
+...
