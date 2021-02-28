@@ -43,4 +43,4 @@
       with_items: "{{ docker_users }}"
 
   roles:
-    - ansible-role-docker
+    - ../../ansible-role-docker
