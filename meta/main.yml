@@ -13,6 +13,7 @@
 # limitations under the License.
 
 galaxy_info:
+  role_name: ansible-role-docker
   author: Matt Williams
   description: Install Docker runtime and ancillary tools
   company: mattslab.io
