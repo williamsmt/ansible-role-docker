@@ -20,7 +20,7 @@ driver:
 lint: |
   set -e
   yamllint .
-  ansible-lint -x 204,303,305
+  ansible-lint
 platforms:
   - name: instance
     image: geerlingguy/docker-${TEST_DISTRO:-centos8}-ansible:latest

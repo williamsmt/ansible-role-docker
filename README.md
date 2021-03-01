@@ -35,7 +35,7 @@ Sample requirements.yml file for custom playbook:
 
     roles:
       - src: https://github.com/williamsmt/ansible-role-docker.git
-        version: 21.1.2
+        version: 21.2.1
         name: ansible-role-docker
 
 To install this role using a requirements.yml file in the playbook directory:

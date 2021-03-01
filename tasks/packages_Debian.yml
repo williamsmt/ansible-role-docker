@@ -17,7 +17,7 @@
   include_vars: "{{ ansible_os_family }}.yml"
 
 - name: Identify host cpu architecture
-  shell: dpkg --print-architecture
+  shell: dpkg --print-architecture # noqa command-instead-of-shell
   register: __debian_cpu_arch
   changed_when: false
 
