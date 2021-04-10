@@ -25,6 +25,7 @@ Role Variables
 | docker_compose_download_root | yes | https://github.com/docker/compose/releases/download | docker github | Leave this at default |
 | docker_compose_version | yes | 1.27.4 | any valid version number | Floating version number with ~ latest |
 | docker_compose_binary_location | yes | /usr/local/bin/docker-compose | any valid file path | Consider leaving this at default |
+| docker_container_depend_dir | no | /opt/docker-files | any valid filepath | Leave this at default |
 
 Dependencies
 ------------
@@ -35,7 +36,7 @@ Sample requirements.yml file for custom playbook:
 
     roles:
       - src: https://github.com/williamsmt/ansible-role-docker.git
-        version: 21.2.2
+        version: 21.4.1
         name: ansible-role-docker
 
 To install this role using a requirements.yml file in the playbook directory:
