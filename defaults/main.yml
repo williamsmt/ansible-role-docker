@@ -28,4 +28,5 @@ docker_config_file: daemon.json
 docker_compose_download_root: https://github.com/docker/compose/releases/download
 docker_compose_version: 1.27.4
 docker_compose_binary_location: /usr/local/bin/docker-compose
+docker_container_depend_dir: /opt/docker-files
 ...

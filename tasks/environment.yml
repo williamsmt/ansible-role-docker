@@ -26,4 +26,12 @@
     mode: '0644'
   when: docker_bridge_subnet is defined
   notify: Restart docker
+
+- name: Create container dependency directory
+  file:
+    path: "{{ docker_container_depend_dir }}"
+    state: directory
+    group: "{{ docker_group }}"
+    mode: '0775'
+    
 ...
