@@ -24,9 +24,7 @@
   notify: Restart docker
 
 - name: Download and install docker compose utility
-  get_url:
-    url: "{{ docker_compose_download_root }}/{{ docker_compose_version }}/docker-compose-linux-{{ ansible_architecture }}"
-    dest: "{{ docker_compose_binary_location }}"
-    mode: '0755'
+  pip:
+    name: docker-compose
   when: install_docker_compose|bool
 ...
