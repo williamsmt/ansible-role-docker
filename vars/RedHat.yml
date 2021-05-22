@@ -16,4 +16,5 @@
 __redhat_prereqs:
   - curl
   - gnupg
+  - python3-pip
 ...

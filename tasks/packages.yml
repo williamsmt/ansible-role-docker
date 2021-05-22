@@ -23,8 +23,15 @@
   when: docker_packages is defined
   notify: Restart docker
 
+- name: Upgrade pip to latest
+  pip:
+    name: pip
+    executable: pip3
+    state: latest # noqa package-latest
+
 - name: Download and install docker compose utility
   pip:
     name: docker-compose
+    executable: pip3
   when: install_docker_compose|bool
 ...

@@ -20,4 +20,5 @@ __debian_prereqs:
   - curl
   - gpg
   - gpg-agent
+  - python3-pip
 ...
