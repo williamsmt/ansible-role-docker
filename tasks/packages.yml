@@ -23,10 +23,15 @@
   when: docker_packages is defined
   notify: Restart docker
 
+- name: Upgrade pip to latest
+  pip:
+    name: pip
+    executable: pip3
+    state: latest # noqa package-latest
+
 - name: Download and install docker compose utility
-  get_url:
-    url: "{{ docker_compose_download_root }}/{{ docker_compose_version }}/docker-compose-linux-{{ ansible_architecture }}"
-    dest: "{{ docker_compose_binary_location }}"
-    mode: '0755'
+  pip:
+    name: docker-compose
+    executable: pip3
   when: install_docker_compose|bool
 ...

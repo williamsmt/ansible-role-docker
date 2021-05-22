@@ -22,9 +22,6 @@ Role Variables
 | docker_bridge_subnet | no | null | any valid cidr | Only use is default docker bridge overlaps with existing network |
 | docker_config_dir | yes | /etc/docker | any valid filepath | Leave this at default |
 | docker_config_file | yes | daemon.json | any valid filename | Leave this at default |
-| docker_compose_download_root | yes | https://github.com/docker/compose/releases/download | docker github | Leave this at default |
-| docker_compose_version | yes | 1.27.4 | any valid version number | Floating version number with ~ latest |
-| docker_compose_binary_location | yes | /usr/local/bin/docker-compose | any valid file path | Consider leaving this at default |
 | docker_container_depend_dir | no | /opt/docker-files | any valid filepath | Leave this at default |
 
 Dependencies
