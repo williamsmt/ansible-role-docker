@@ -29,4 +29,15 @@
     baseurl: "{{ docker_download_root }}/{{ ansible_distribution | lower }}/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/{{ docker_channel }}/"
     gpgcheck: yes
     gpgkey: "{{ docker_download_root }}/{{ ansible_distribution | lower }}/gpg"
+
+- name: Update sudo path to include pip3 binary location
+  copy:
+    src: "{{ item.source }}"
+    dest: "{{ item.destination }}"
+    owner: root
+    group: root
+    mode: "{{ item.mode }}"
+  with_items:
+    - { source: './files/secure_path.txt', destination: '/etc/sudoers.d/secure_path', mode: '0644' }
+  when: ansible_distribution_major_version == '8'
 ...
